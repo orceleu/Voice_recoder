@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_fragment1"
+        android:title="record"
+        android:icon="@drawable/ic_baseline_mic_none_24" />
+    <item
+        android:id="@+id/action_fragment2"
+        android:title="list"
+        android:icon="@drawable/ic_baseline_queue_music_24" />
+</menu>
