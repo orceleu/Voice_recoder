@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragement.Fragment1"
-    android:background="#373F48"
-    >
+    android:background="#373F48">
 
 
 
@@ -14,16 +14,60 @@
         android:layout_height="match_parent"
 
         >
+
+        <com.visualizer.amplitude.AudioRecordView
+            android:id="@+id/audioRecordView"
+            android:layout_width="256dp"
+             android:layout_centerHorizontal="true"
+            android:layout_height="64dp"
+            android:layout_above="@+id/textView"
+            android:layout_marginBottom="61dp"
+            app:chunkAlignTo="center"
+            app:chunkColor="@color/purple_200"
+            app:chunkMaxHeight="48dp"
+            app:chunkMinHeight="2dp"
+            app:chunkRoundedCorners="true"
+            app:chunkSoftTransition="true"
+            app:chunkSpace="1dp"
+            app:chunkWidth="2dp"
+            app:direction="leftToRight" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start/stop"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"/>
+        <Button
+            android:id="@+id/btnPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pause"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="70dp"/>
+        <Button
+            android:id="@+id/btnResume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="resume"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="130dp"/>
+
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="fragement1"
-            android:textAlignment="center"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textColor="@color/white"/>
+            android:textAlignment="center"
+            android:textColor="@color/white" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
+            android:contentDescription="@string/app_name"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_settings_applications_24"
             android:layout_alignParentBottom="true"
