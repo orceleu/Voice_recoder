@@ -15,65 +15,129 @@
 
         >
 
-        <com.visualizer.amplitude.AudioRecordView
-            android:id="@+id/audioRecordView"
-            android:layout_width="256dp"
-             android:layout_centerHorizontal="true"
-            android:layout_height="64dp"
-            android:layout_above="@+id/textView"
-            android:layout_marginBottom="61dp"
-            app:chunkAlignTo="center"
-            app:chunkColor="@color/purple_200"
-            app:chunkMaxHeight="48dp"
-            app:chunkMinHeight="2dp"
-            app:chunkRoundedCorners="true"
-            app:chunkSoftTransition="true"
-            app:chunkSpace="1dp"
-            app:chunkWidth="2dp"
-            app:direction="leftToRight" />
-
-        <Button
-            android:id="@+id/btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="start/stop"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"/>
-        <Button
-            android:id="@+id/btnPause"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="pause"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="70dp"/>
-        <Button
-            android:id="@+id/btnResume"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="resume"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="130dp"/>
-
-        <TextView
-            android:id="@+id/textView"
+        <RelativeLayout
+            android:id="@+id/layoutvisualizer"
             android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/layout_visualizer">
+
+            <com.visualizer.amplitude.AudioRecordView
+                android:id="@+id/audioRecordView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="1dp"
+                app:chunkAlignTo="center"
+                app:chunkColor="@color/purple_200"
+                app:chunkMaxHeight="90dp"
+                app:chunkMinHeight="2dp"
+                app:chunkRoundedCorners="true"
+                app:chunkSoftTransition="true"
+                app:chunkSpace="1dp"
+                app:chunkWidth="2dp"
+                app:direction="leftToRight" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/audioRecordView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="15dp"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textAlignment="center"
-            android:textColor="@color/white" />
+            android:layout_below="@+id/layoutvisualizer"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+
+
+            <Spinner
+                android:id="@+id/spinnerBit"
+                android:layout_marginEnd="25dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+
+
+               />
+            <ImageButton
+                android:contentDescription="suppress"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+                android:background="#373F48"
+                android:src="@drawable/baseline_fiber_smart_record_24"/>
+            <Spinner
+                android:id="@+id/spinnerStereo"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textAlignment="center"/>
+
+
+
+        </LinearLayout>
+  <LinearLayout
+      android:id="@+id/layoutPlayAndValidate"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="15dp">
+      <ImageButton
+          android:contentDescription="pause"
+          android:id="@+id/btnPause"
+      android:layout_width="70dp"
+      android:layout_height="70dp"
+      android:backgroundTint="#373F48"
+      android:src="@drawable/baseline_play_arrow_24"/>
+
+      <ImageButton
+          android:contentDescription="stopAndValidate"
+          android:id="@+id/btnStop"
+          android:layout_width="70dp"
+          android:layout_height="70dp"
+          android:backgroundTint="#373F48"
+          android:src="@drawable/baseline_check_24" />
+
+
+  </LinearLayout>
+
+
+
+
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:contentDescription="@string/app_name"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_settings_applications_24"
+            android:src="@drawable/baseline_keyboard_voice_24"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="30dp"
-            android:layout_marginBottom="30dp"/>
+            android:backgroundTint="#A9B1E1"
+            android:layout_marginBottom="35dp"/>
     </RelativeLayout>
 
 </FrameLayout>

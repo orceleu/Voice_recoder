@@ -1,4 +1,21 @@
 <resources>
+
+    <string-array name="sp_bit">
+      <item>@string/height_bit</item>
+      <item>@string/sixteen_bit</item>
+      <item>@string/twenty_two_bit</item>
+    </string-array>
+ <string-array name="sp_channel">
+        <item>@string/mono</item>
+        <item>@string/stereo</item>
+ </string-array>
+    <string name="mono">Mono</string>
+    <string name="stereo">Stéreo</string>
+
+    <string name="height_bit">8 Bit</string>
+    <string name="sixteen_bit">16 Bit</string>
+    <string name="twenty_two_bit">32 Bit</string>
+
     <string name="app_name">Voice recoder</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
