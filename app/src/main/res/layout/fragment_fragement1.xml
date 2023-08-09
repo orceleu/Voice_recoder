@@ -8,119 +8,124 @@
     android:background="#373F48">
 
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         >
+        <RadioGroup
+            android:layout_marginTop="10dp"
+            android:id="@+id/RadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+
+
+            <RadioButton
+                android:id="@+id/radioBtnStandard"
+                android:layout_width="100dp"
+                android:layout_height="49dp"
+                android:text="standard"
+                android:textAlignment="center"
+                android:button="@drawable/radio_null"
+                android:textColor="@drawable/radio_text_selector"
+                android:background="@drawable/radio_selector"/>
+            <RadioButton
+                android:id="@+id/radioBtnStudio"
+                android:layout_width="100dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="studio"
+                android:textAlignment="center"
+                android:button="@drawable/radio_null"
+                android:textColor="@drawable/radio_text_selector"
+                android:background="@drawable/radio_selector"/>
+            <RadioButton
+                android:id="@+id/radioBtnDisco"
+                android:layout_width="100dp"
+                android:layout_height="49dp"
+                android:text="disco"
+                android:textAlignment="center"
+                android:button="@drawable/radio_null"
+                android:textColor="@drawable/radio_text_selector"
+                android:background="@drawable/radio_selector"/>
+        </RadioGroup>
+
+
 
         <RelativeLayout
-            android:id="@+id/layoutvisualizer"
+            android:id="@+id/layoutImg"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_below="@+id/RadioGroup"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/layout_visualizer">
 
-            <com.visualizer.amplitude.AudioRecordView
-                android:id="@+id/audioRecordView"
+            <ImageView
+                android:id="@+id/ImageViewdesc"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_centerInParent="true"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="1dp"
-                app:chunkAlignTo="center"
-                app:chunkColor="@color/purple_200"
-                app:chunkMaxHeight="90dp"
-                app:chunkMinHeight="2dp"
-                app:chunkRoundedCorners="true"
-                app:chunkSoftTransition="true"
-                app:chunkSpace="1dp"
-                app:chunkWidth="2dp"
-                app:direction="leftToRight" />
+                android:src="@drawable/ic_baseline_mic_none_24"
+                 />
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewDesc"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/audioRecordView"
+                android:layout_below="@+id/ImageViewdesc"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="0dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp"
-                android:text="00:00"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textColor="#AAAAAA"
+                android:textSize="12sp" />
         </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/layoutvisualizer"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal">
-
-
-
-            <Spinner
-                android:id="@+id/spinnerBit"
-                android:layout_marginEnd="25dp"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-
-
-               />
-            <ImageButton
-                android:contentDescription="suppress"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-                android:background="#373F48"
-                android:src="@drawable/baseline_fiber_smart_record_24"/>
-            <Spinner
-                android:id="@+id/spinnerStereo"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:textAlignment="center"/>
-
-
-
-        </LinearLayout>
-  <LinearLayout
-      android:id="@+id/layoutPlayAndValidate"
-      android:layout_width="wrap_content"
+  <RelativeLayout
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_centerHorizontal="true"
-      android:layout_alignParentBottom="true"
-      android:layout_marginBottom="15dp">
-      <ImageButton
-          android:contentDescription="pause"
-          android:id="@+id/btnPause"
-      android:layout_width="70dp"
-      android:layout_height="70dp"
-      android:backgroundTint="#373F48"
-      android:src="@drawable/baseline_play_arrow_24"/>
+      android:layout_below="@id/layoutImg"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentEnd="true">
 
-      <ImageButton
-          android:contentDescription="stopAndValidate"
-          android:id="@+id/btnStop"
-          android:layout_width="70dp"
-          android:layout_height="70dp"
-          android:backgroundTint="#373F48"
-          android:src="@drawable/baseline_check_24" />
-
-
-  </LinearLayout>
+      <TextView
+          android:id="@+id/tvKhz"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+         android:text="32Khz"
+          android:textColor="#888FAA"
+          android:layout_centerHorizontal="true"/>
+      <TextView
+          android:id="@+id/tvChannel"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+         android:text="mono"
+          android:textColor="#888FAA"
+          android:layout_alignParentStart="true"
+          android:layout_marginStart="20dp"/>
+      <TextView
+          android:id="@+id/tvKbps"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+         android:text="128kps"
+          android:textColor="#888FAA"
+          android:layout_alignParentEnd="true"
+          android:layout_marginEnd="20dp"/>
+  </RelativeLayout>
 
 
 

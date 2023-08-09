@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2"
+    android:background="#373F48">
+
+    <ImageButton
+        android:id="@+id/recording_return"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:contentDescription="return"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="7dp"
+        android:backgroundTint="#373F48"
+        android:src="@drawable/baseline_arrow_back_ios_24" />
+
+    <RelativeLayout
+        android:id="@+id/layoutvisualizer"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/recording_return"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/layout_visualizer">
+
+        <com.visualizer.amplitude.AudioRecordView
+            android:id="@+id/audioRecordView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="1dp"
+            app:chunkAlignTo="center"
+            app:chunkColor="@color/purple_200"
+            app:chunkMaxHeight="120dp"
+            app:chunkMinHeight="1dp"
+            app:chunkRoundedCorners="true"
+            app:chunkSoftTransition="true"
+            app:chunkSpace="1dp"
+            app:chunkWidth="2dp"
+            app:direction="leftToRight" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/audioRecordView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="15dp"
+            android:text="00:00"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/layoutPlayAndValidate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp">
+        <ImageButton
+            android:contentDescription="pause"
+            android:id="@+id/btnPause"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#373F48"
+            android:src="@drawable/baseline_stop_24"/>
+
+        <ImageButton
+            android:contentDescription="stopAndValidate"
+            android:id="@+id/btnStop"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#373F48"
+            android:src="@drawable/baseline_check_24" />
+
+
+    </LinearLayout>
+</RelativeLayout>
